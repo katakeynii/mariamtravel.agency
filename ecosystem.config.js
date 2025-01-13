@@ -8,11 +8,11 @@ const RUN_ENV_MAP = {
     max_memory_restart: '250M'
   },
   dev: {
-    instances: 2,
+    instances: 1,
     max_memory_restart: '250M'
   },
   prod: {
-    instances: 4,
+    instances: 3,
     max_memory_restart: '1000M'
   }
 }
@@ -27,10 +27,10 @@ module.exports = {
       name: 'mariamtravel.agency',
       script: 'node_modules/next/dist/bin/next',
       args: 'start  -p 9090',
-      instances: RUN_ENV_MAP[argEnv as keyof typeof RUN_ENV_MAP].instances,
+      instances: RUN_ENV_MAP[argEnv].instances,
       exec_mode: 'cluster',
       watch: false,
-      max_memory_restart: RUN_ENV_MAP[argEnv as keyof typeof RUN_ENV_MAP].max_memory_restart,
+      max_memory_restart: RUN_ENV_MAP[argEnv].max_memory_restart,
       env_local: {
         APP_ENV: 'local'
       },

@@ -65,7 +65,8 @@ jobs:
             echo "===================================================="
             if pm2 list | grep -q 'mariamtravel.agency'; then
               echo "Ready to reload !"
-            pm2 reload mariamtravel.agency 
+              pm2 start --interpreter $(which node) --name "mariamtravel.agency" npm start -p 9090
+              pm2 reload mariamtravel.agency 
             else
               echo "Ready to start !"
               pm2 start yarn --interpreter $(which node) --name "mariamtravel.agency" -- start -p 9090
