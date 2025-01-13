@@ -24,13 +24,13 @@ if (!(argEnv in RUN_ENV_MAP)) {
 module.exports = {
   apps: [
     {
-      name: 'drcheikhgueye.com',
+      name: 'mariamtravel.agency',
       script: 'node_modules/next/dist/bin/next',
-      args: 'start  -p 9000',
-      instances: RUN_ENV_MAP[argEnv].instances,
+      args: 'start  -p 9090',
+      instances: RUN_ENV_MAP[argEnv as keyof typeof RUN_ENV_MAP].instances,
       exec_mode: 'cluster',
       watch: false,
-      max_memory_restart: RUN_ENV_MAP[argEnv].max_memory_restart,
+      max_memory_restart: RUN_ENV_MAP[argEnv as keyof typeof RUN_ENV_MAP].max_memory_restart,
       env_local: {
         APP_ENV: 'local'
       },
