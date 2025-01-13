@@ -26,7 +26,7 @@ module.exports = {
     {
       name: 'mariamtravel.agency',
       script: 'node_modules/next/dist/bin/next',
-      args: 'start  -p 9090',
+      args: 'start  -p 9091',
       instances: RUN_ENV_MAP[argEnv].instances,
       exec_mode: 'cluster',
       watch: false,
