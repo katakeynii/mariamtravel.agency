@@ -21,7 +21,7 @@ const Page = () => {
                 <h1 className="text-3xl font-bold">Oumra Ramadan du 15 au 30 Mars 2025</h1>
             </header>
             <div className="flex justify-center items-center">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfqNvtWWmt-EJVvy_UtvzVPjJw0IIriozAt52ahh8LZQybCTw/viewform?embedded=true" width="640" height="3441" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfqNvtWWmt-EJVvy_UtvzVPjJw0IIriozAt52ahh8LZQybCTw/viewform?embedded=true" width="640" height="3441" frameBorder="0" marginHeight={0} marginWidth={0}>Chargement…</iframe>
             </div>
         </div>
     );
