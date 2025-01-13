@@ -69,7 +69,7 @@ jobs:
                echo "${{ secrets.DEPLOY_PASS }}" | sudo -S pm2 reload mariamtravel.agency 
             else
               echo "Ready to start !"
-              echo $DEPLOY_PASS | pm2 start yarn --interpreter $(which node) --name "mariamtravel.agency" -- start -p 9091
+              echo $DEPLOY_PASS | pm2 start yarn --interpreter $(nvm which 20.18.0) --name "mariamtravel.agency" -- start -p 9091
             fi
             # Ensure PM2 auto-restarts the app on server reboot
             # pm2 save
