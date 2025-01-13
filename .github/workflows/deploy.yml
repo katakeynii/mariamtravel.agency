@@ -65,11 +65,12 @@ jobs:
             echo "===================================================="
             if pm2 list | grep -q 'mariamtravel.agency'; then
               echo "Ready to reload !"
-              pm2 start --interpreter $(which node) --name "mariamtravel.agency" -- npm start -p 9090
-              pm2 reload mariamtravel.agency 
+              # Spécifier explicitement le chemin de Node.js v20.18.0
+              pm2 delete mariamtravel.agency || true
+              pm2 start yarn --interpreter $(nvm which 20.18.0) --name "mariamtravel.agency" -- start -- -p 9091
             else
               echo "Ready to start !"
-              pm2 start yarn --interpreter $(which node) --name "mariamtravel.agency" -- start -p 9090
+              pm2 start yarn --interpreter $(nvm which 20.18.0) --name "mariamtravel.agency" -- start -- -p 9091
             fi
 
             # Ensure PM2 auto-restarts the app on server reboot
